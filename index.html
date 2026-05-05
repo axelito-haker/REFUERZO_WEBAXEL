@@ -1,14 +1,1198 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Declaración del tipo de documento: le indica al navegador que este archivo sigue el estándar HTML5 -->
+
+<html lang="es">
+<!-- Etiqueta raíz de todo el documento HTML. El atributo lang="es" le dice al navegador y a los lectores de pantalla que el contenido está en español -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejemplo pagina web basica</title>
-    <h1> ejercicio de axel</h1>
+  <!-- La sección <head> contiene metadatos del documento: no se muestra en pantalla pero es esencial para el navegador y los motores de búsqueda -->
+
+  <meta charset="UTF-8" />
+  <!-- Define la codificación de caracteres como UTF-8, lo que permite mostrar tildes, ñ y otros caracteres del español correctamente -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Hace que la página sea responsiva: ajusta el ancho al del dispositivo y evita que se vea en zoom reducido en móviles -->
+
+  <meta name="description" content="Página informativa sobre el mantenimiento y aseguramiento de la operación del sistema informático, incluyendo mantenimiento preventivo, correctivo, normas ISO e ITIL v3." />
+  <!-- Descripción de la página para motores de búsqueda. Aparece en los resultados de Google como el texto debajo del título -->
+
+  <meta name="author" content="Estudiante - Módulo Mantenimiento de Sistemas" />
+  <!-- Indica el autor del documento -->
+
+  <title>Mantenimiento y Aseguramiento de Sistemas Informáticos</title>
+  <!-- Título que aparece en la pestaña del navegador y en los resultados de búsqueda -->
+
+  <link rel="stylesheet" href="style.css" />
+  <!-- Vincula el archivo externo style.css que contendrá todos los estilos visuales de la página. Se trabajará aparte -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Importa dos tipografías de Google Fonts: Source Serif 4 para títulos y IBM Plex Sans para cuerpo de texto -->
 
 </head>
+
 <body>
-    //*en esta parte de colocara todo lo que va a tener la pagina web
-    <p> este es mi sgundo repositorio con este archivo modificado</p>
+  <!-- La etiqueta <body> contiene todo el contenido visible de la página: textos, imágenes, menús, secciones, etc. -->
+
+  <!-- ============================================================
+       ENCABEZADO PRINCIPAL (HEADER)
+       Contiene el título del sitio y el menú de navegación principal.
+       Se muestra fijo en la parte superior de la página.
+  ============================================================ -->
+  <header id="inicio">
+    <!-- <header> es un elemento semántico de HTML5 que representa la cabecera del sitio -->
+    <!-- id="inicio" permite que el menú pueda hacer scroll hasta esta sección con un enlace ancla (#inicio) -->
+
+    <div class="header-inner">
+      <!-- Contenedor interno que limita el ancho del contenido y lo centra en pantalla -->
+
+      <div class="logo-area">
+        <!-- Área del logo o nombre del sitio, ubicada a la izquierda del encabezado -->
+        <span class="logo-tag">Módulo Técnico</span>
+        <!-- Etiqueta pequeña sobre el título principal que categoriza el tipo de contenido -->
+        <h1 class="site-title">Mantenimiento y Aseguramiento de Sistemas Informáticos</h1>
+        <!-- Título principal del sitio. H1 es el encabezado más importante del documento; solo debe haber uno por página -->
+      </div>
+
+      <!-- ============================================================
+           MENÚ DE NAVEGACIÓN PRINCIPAL
+           Permite al usuario moverse entre las secciones de la página
+           usando anclas (href="#id") sin recargar el documento.
+      ============================================================ -->
+      <nav class="main-nav" aria-label="Navegación principal">
+        <!-- <nav> es un elemento semántico para bloques de navegación -->
+        <!-- aria-label ayuda a los lectores de pantalla a identificar que este es el menú principal -->
+
+        <ul class="nav-list">
+          <!-- Lista desordenada que agrupa todos los ítems del menú -->
+
+          <li><a href="#inicio">Inicio</a></li>
+          <!-- Cada <li> es un ítem de menú. El href="#id" hace scroll hasta la sección con ese id -->
+
+          <li><a href="#que-es">Que es</a></li>
+          <!-- Enlace hacia la sección "Qué es el mantenimiento" -->
+
+          <li class="has-dropdown">
+            <!-- Ítem con submenú desplegable. La clase "has-dropdown" se usará en CSS para estilizarlo -->
+            <a href="#tipos">Tipos</a>
+            <!-- Enlace principal que también dirige a la sección de tipos -->
+
+            <ul class="dropdown">
+              <!-- Submenú oculto que aparece al hacer hover sobre el ítem padre -->
+              <li><a href="#preventivo">Preventivo</a></li>
+              <li><a href="#correctivo">Correctivo</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#planes">Planes</a></li>
+          <!-- Enlace a la sección de planes operativos y de contingencia -->
+
+          <li><a href="#normas-iso">Normas ISO</a></li>
+          <!-- Enlace a la sección sobre normas ISO aplicadas a sistemas informáticos -->
+
+          <li><a href="#itil">ITIL v3</a></li>
+          <!-- Enlace a la sección sobre las buenas prácticas de ITIL versión 3 -->
+
+          <li><a href="#calidad">Calidad</a></li>
+          <!-- Enlace a la sección sobre aseguramiento de la calidad del sistema -->
+
+          <li><a href="#contact.html">Contacto</a></li>
+          <!-- Enlace hacia la conclusión del módulo -->
+
+        </ul>
+        <!-- Fin de la lista de navegación -->
+
+      </nav>
+      <!-- Fin del menú de navegación -->
+
+    </div>
+    <!-- Fin del contenedor interno del header -->
+
+  </header>
+  <!-- Fin del encabezado -->
+
+
+  <!-- ============================================================
+       SECCIÓN HERO (PRESENTACIÓN)
+       Primera sección visible al cargar la página. Contiene
+       una introducción breve y llamativa al tema del módulo.
+  ============================================================ -->
+  <section class="hero">
+    <!-- <section> agrupa contenido temáticamente relacionado. La clase "hero" le da estilos especiales de portada -->
+
+    <div class="container">
+      <!-- Contenedor reutilizable que centra y limita el ancho del contenido -->
+
+      <p class="hero-label">Módulo de formación técnica</p>
+      <!-- Etiqueta pequeña que contextualiza la sección antes del título -->
+
+      <h2 class="hero-title">La continuidad de un sistema no es casualidad</h2>
+      <!-- Título llamativo de la sección hero. Usa H2 porque H1 ya está en el header -->
+
+      <p class="hero-text">
+        Todo sistema informático, sin importar su tamaño o propósito, requiere atención constante. 
+        Esta página reúne los fundamentos del mantenimiento preventivo y correctivo, los planes de 
+        contingencia, las normas ISO y las prácticas de ITIL v3 que hacen posible que los sistemas 
+        sigan operando de forma confiable, segura y eficiente a lo largo del tiempo.
+      </p>
+      <!-- Párrafo introductorio redactado de forma natural, como lo escribiría un estudiante -->
+
+      <a href="#que-es" class="btn-primary">Explorar el modulo</a>
+      <!-- Botón de llamada a la acción que lleva al usuario a la primera sección de contenido -->
+
+    </div>
+
+  </section>
+  <!-- Fin de la sección hero -->
+
+
+  <!-- ============================================================
+       SECCIÓN: QUÉ ES EL MANTENIMIENTO DE SISTEMAS
+       Explica el concepto general del módulo de forma introductoria.
+  ============================================================ -->
+  <section id="que-es" class="section-block">
+    <!-- id="que-es" permite que el enlace del menú haga scroll hasta aquí al hacer clic -->
+    <!-- La clase "section-block" se usará en CSS para dar espaciado y estilo uniforme a todas las secciones -->
+
+    <div class="container">
+
+      <div class="section-header">
+        <!-- Contenedor del encabezado de sección: título y subtítulo descriptivo -->
+        <span class="section-tag">Introduccion</span>
+        <h2>Que es el mantenimiento de un sistema informatico</h2>
+      </div>
+
+      <div class="content-grid two-col">
+        <!-- Contenedor en grilla de dos columnas: texto a la izquierda, cuadro destacado a la derecha -->
+        <!-- La clase "two-col" se usará en CSS para aplicar display: grid con dos columnas -->
+
+        <div class="text-block">
+          <!-- Bloque de texto corrido con párrafos explicativos -->
+
+          <p>
+            El mantenimiento de un sistema informático es el conjunto de acciones técnicas y 
+            organizativas que se realizan para garantizar que los equipos, software y servicios 
+            funcionen correctamente, de forma continua y dentro de los parámetros de calidad 
+            esperados por la organización.
+          </p>
+
+          <p>
+            No se trata únicamente de reparar lo que falla. El mantenimiento moderno implica 
+            anticiparse a los problemas antes de que ocurran, documentar cada proceso, cumplir 
+            con estándares internacionales y adoptar metodologías que han demostrado ser efectivas 
+            en la industria tecnológica.
+          </p>
+
+          <p>
+            Un sistema que no se mantiene adecuadamente tiende a degradarse con el tiempo. 
+            Las fallas se vuelven más frecuentes, los costos de reparación aumentan y la 
+            productividad de la organización se ve comprometida. Por eso, el mantenimiento 
+            no es un gasto, sino una inversión en la estabilidad operativa.
+          </p>
+
+        </div>
+        <!-- Fin del bloque de texto -->
+
+        <aside class="highlight-box">
+          <!-- <aside> contiene información complementaria relacionada con el texto principal -->
+          <!-- "highlight-box" le dará estilos visuales destacados en CSS -->
+
+          <h3>Objetivos principales</h3>
+          <!-- Subtítulo del cuadro destacado -->
+
+          <ul class="icon-list">
+            <!-- Lista de objetivos clave del mantenimiento de sistemas -->
+            <li>Garantizar la disponibilidad continua del sistema</li>
+            <li>Prevenir fallos antes de que afecten la operacion</li>
+            <li>Reducir el tiempo de inactividad no planificado</li>
+            <li>Prolongar la vida util de los equipos y el software</li>
+            <li>Asegurar la integridad y seguridad de la informacion</li>
+            <li>Cumplir con normas y estandares reconocidos internacionalmente</li>
+          </ul>
+
+        </aside>
+        <!-- Fin del cuadro destacado -->
+
+      </div>
+      <!-- Fin de la grilla de dos columnas -->
+
+    </div>
+
+  </section>
+  <!-- Fin de la sección "Qué es" -->
+
+
+  <!-- ============================================================
+       SECCIÓN: TIPOS DE MANTENIMIENTO
+       Introducción general a los tipos antes de desarrollar
+       cada uno en su propia subsección.
+  ============================================================ -->
+  <section id="tipos" class="section-block alt-bg">
+    <!-- "alt-bg" le dará un color de fondo alternativo para diferenciar visualmente las secciones -->
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Clasificacion</span>
+        <h2>Tipos de mantenimiento</h2>
+        <p class="section-intro">
+          El mantenimiento de sistemas informáticos no es un proceso único. Dependiendo del 
+          momento en que se aplique y del objetivo que persiga, se clasifica en distintas 
+          categorías, cada una con sus propias técnicas, herramientas y responsabilidades.
+        </p>
+        <!-- Párrafo introductorio debajo del título de sección -->
+      </div>
+
+      <div class="cards-row">
+        <!-- Contenedor de tarjetas informativas alineadas horizontalmente -->
+
+        <!-- Tarjeta 1: Mantenimiento Preventivo -->
+        <div class="info-card">
+          <!-- Cada "info-card" es una tarjeta con información resumida de un subtema -->
+          <div class="card-label">Tipo 01</div>
+          <h3>Preventivo</h3>
+          <p>
+            Se realiza de forma programada y periódica para evitar que los problemas ocurran. 
+            Incluye limpieza de equipos, actualizaciones de software, revisión de logs y 
+            verificación del rendimiento del sistema.
+          </p>
+          <a href="#preventivo" class="card-link">Leer mas</a>
+          <!-- Enlace interno hacia la subsección de mantenimiento preventivo -->
+        </div>
+
+        <!-- Tarjeta 2: Mantenimiento Correctivo -->
+        <div class="info-card">
+          <div class="card-label">Tipo 02</div>
+          <h3>Correctivo</h3>
+          <p>
+            Se ejecuta cuando ya existe un fallo o anomalía en el sistema. Su objetivo es 
+            restaurar el funcionamiento normal en el menor tiempo posible, minimizando el 
+            impacto en la operación de la organización.
+          </p>
+          <a href="#correctivo" class="card-link">Leer mas</a>
+        </div>
+
+        <!-- Tarjeta 3: Mantenimiento Predictivo -->
+        <div class="info-card">
+          <div class="card-label">Tipo 03</div>
+          <h3>Predictivo</h3>
+          <p>
+            Utiliza datos en tiempo real, métricas de rendimiento y herramientas de monitoreo 
+            para anticipar cuándo podría fallar un componente, permitiendo actuar antes de que 
+            el problema se materialice.
+          </p>
+          <a href="#planes" class="card-link">Ver planes</a>
+        </div>
+
+      </div>
+      <!-- Fin de las tarjetas -->
+
+    </div>
+
+  </section>
+  <!-- Fin de la sección de tipos -->
+
+
+  <!-- ============================================================
+       SUBSECCIÓN: MANTENIMIENTO PREVENTIVO
+       Desarrolla en detalle qué es, cómo se aplica y qué incluye
+       el mantenimiento preventivo en sistemas informáticos.
+  ============================================================ -->
+  <section id="preventivo" class="section-block">
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Tipo 01</span>
+        <h2>Mantenimiento preventivo</h2>
+      </div>
+
+      <div class="content-grid two-col">
+
+        <div class="text-block">
+
+          <p>
+            El mantenimiento preventivo parte de una premisa simple: es mejor invertir tiempo 
+            y recursos en revisar el sistema regularmente que esperar a que algo falle. A diferencia 
+            del mantenimiento correctivo, este no responde a un problema, sino que trabaja para 
+            que ese problema nunca llegue a ocurrir.
+          </p>
+
+          <p>
+            En la práctica, esto significa programar revisiones periódicas, establecer calendarios 
+            de actualización, monitorear el uso de recursos del sistema y documentar cada actividad 
+            realizada. Todo queda registrado para poder analizar tendencias y tomar decisiones 
+            con información concreta.
+          </p>
+
+          <p>
+            Una organización que aplica mantenimiento preventivo de forma disciplinada reduce 
+            significativamente los tiempos de inactividad no planificados, extiende la vida útil 
+            de sus equipos y mantiene un ambiente de trabajo más estable para sus usuarios.
+          </p>
+
+        </div>
+
+        <div class="checklist-box">
+          <!-- Cuadro con lista de verificación de actividades preventivas -->
+
+          <h3>Actividades tipicas</h3>
+
+          <ul class="checklist">
+            <!-- Lista de tareas comunes del mantenimiento preventivo -->
+            <li>
+              <span class="check-mark">&#10003;</span>
+              <!-- Caracter HTML para mostrar el simbolo de verificacion (checkmark) -->
+              Limpieza fisica de equipos y perifericos
+            </li>
+            <li>
+              <span class="check-mark">&#10003;</span>
+              Actualizacion de sistema operativo y aplicaciones
+            </li>
+            <li>
+              <span class="check-mark">&#10003;</span>
+              Revision y limpieza de archivos temporales y logs
+            </li>
+            <li>
+              <span class="check-mark">&#10003;</span>
+              Verificacion del estado del disco duro (SMART)
+            </li>
+            <li>
+              <span class="check-mark">&#10003;</span>
+              Comprobacion de copias de seguridad (backups)
+            </li>
+            <li>
+              <span class="check-mark">&#10003;</span>
+              Analisis de rendimiento de la red y servidores
+            </li>
+            <li>
+              <span class="check-mark">&#10003;</span>
+              Revision de licencias y vigencia de software
+            </li>
+            <li>
+              <span class="check-mark">&#10003;</span>
+              Documentacion de todas las actividades realizadas
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- Subsección con tabla de frecuencias de mantenimiento -->
+      <div class="table-wrapper">
+        <!-- Contenedor de la tabla que permite scroll horizontal en pantallas pequeñas -->
+
+        <h3>Frecuencia recomendada de actividades</h3>
+        <!-- Título de la tabla -->
+
+        <table class="data-table">
+          <!-- Tabla HTML con datos estructurados sobre frecuencias de mantenimiento -->
+
+          <thead>
+            <!-- Encabezado de la tabla -->
+            <tr>
+              <th>Actividad</th>
+              <th>Frecuencia</th>
+              <th>Responsable</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- Cuerpo de la tabla con las filas de datos -->
+            <tr>
+              <td>Limpieza fisica de equipos</td>
+              <td>Cada 3 meses</td>
+              <td>Tecnico de soporte</td>
+            </tr>
+            <tr>
+              <td>Actualizaciones de seguridad</td>
+              <td>Mensual</td>
+              <td>Administrador de sistemas</td>
+            </tr>
+            <tr>
+              <td>Verificacion de backups</td>
+              <td>Semanal</td>
+              <td>Administrador de sistemas</td>
+            </tr>
+            <tr>
+              <td>Revision de logs del sistema</td>
+              <td>Diaria</td>
+              <td>Equipo de operaciones</td>
+            </tr>
+            <tr>
+              <td>Auditoria completa del sistema</td>
+              <td>Anual</td>
+              <td>Equipo de TI + Auditores</td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+      <!-- Fin de la tabla -->
+
+    </div>
+
+  </section>
+  <!-- Fin de mantenimiento preventivo -->
+
+
+  <!-- ============================================================
+       SUBSECCIÓN: MANTENIMIENTO CORRECTIVO
+       Explica qué hacer cuando el sistema ya ha fallado, cómo
+       responder y qué proceso seguir para restablecer la operación.
+  ============================================================ -->
+  <section id="correctivo" class="section-block alt-bg">
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Tipo 02</span>
+        <h2>Mantenimiento correctivo</h2>
+      </div>
+
+      <p class="section-intro">
+        Por más riguroso que sea el mantenimiento preventivo, los fallos no siempre se pueden 
+        evitar. El mantenimiento correctivo es el proceso que entra en acción cuando el sistema 
+        ya presenta una falla, y su efectividad depende directamente de qué tan bien preparado 
+        esté el equipo técnico para responder.
+      </p>
+
+      <div class="steps-grid">
+        <!-- Contenedor de pasos numerados del proceso correctivo -->
+
+        <!-- Paso 1 -->
+        <div class="step-card">
+          <!-- Cada step-card representa una etapa del proceso de mantenimiento correctivo -->
+          <div class="step-number">01</div>
+          <!-- Número visual del paso, no es funcional sino decorativo y orientativo -->
+          <h3>Deteccion del fallo</h3>
+          <p>
+            El primer paso es identificar con precisión qué componente, servicio o proceso 
+            ha fallado. Esto puede suceder por reportes de usuarios, alertas del sistema de 
+            monitoreo o durante una revision rutinaria.
+          </p>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Diagnostico</h3>
+          <p>
+            Una vez detectado el fallo, el técnico analiza los logs, revisa el estado de los 
+            servicios y determina la causa raíz del problema. Un buen diagnóstico evita aplicar 
+            soluciones temporales que no resuelven el problema de fondo.
+          </p>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Solucion y restauracion</h3>
+          <p>
+            Con la causa identificada, se aplica la corrección correspondiente: puede ser 
+            un reinicio de servicio, reemplazo de hardware, restauración desde backup, 
+            reinstalación de software o ajuste de configuraciones.
+          </p>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3>Verificacion y documentacion</h3>
+          <p>
+            Después de aplicar la solución, se verifica que el sistema funcione correctamente. 
+            Todo el proceso debe quedar documentado: qué falló, cuándo, cómo se resolvió 
+            y qué tiempo tomó la recuperación.
+          </p>
+        </div>
+
+      </div>
+      <!-- Fin de los pasos -->
+
+    </div>
+
+  </section>
+  <!-- Fin del mantenimiento correctivo -->
+
+
+  <!-- ============================================================
+       SECCIÓN: PLANES OPERATIVOS Y DE CONTINGENCIA
+       Explica cómo prepararse para escenarios de fallo mayor
+       mediante la planificación anticipada.
+  ============================================================ -->
+  <section id="planes" class="section-block">
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Planificacion</span>
+        <h2>Planes operativos y de contingencia</h2>
+      </div>
+
+      <div class="content-grid two-col">
+
+        <div class="text-block">
+
+          <p>
+            Un plan de contingencia es un documento formal que describe qué debe hacer 
+            la organización cuando ocurre una falla grave que afecta la continuidad del 
+            servicio. No se improvisa en el momento del problema: se prepara con anticipación, 
+            se prueba y se actualiza periódicamente.
+          </p>
+
+          <p>
+            El plan operativo, por su parte, establece las rutinas diarias del equipo de TI: 
+            quién es responsable de qué, cuáles son los procedimientos estándar, cómo se 
+            escala un problema y cuáles son los tiempos de respuesta esperados para cada 
+            tipo de incidente.
+          </p>
+
+          <p>
+            Juntos, estos dos documentos forman la base de una operación estable. Una 
+            organización que cuenta con ellos puede responder a crisis de forma ordenada, 
+            sin depender de la memoria o el criterio individual de una sola persona.
+          </p>
+
+        </div>
+
+        <div class="highlight-box">
+          <h3>Elementos de un plan de contingencia</h3>
+
+          <ul class="icon-list">
+            <li>Identificacion de riesgos y amenazas criticas</li>
+            <li>Definicion de escenarios de fallo posibles</li>
+            <li>Roles y responsabilidades del equipo de respuesta</li>
+            <li>Procedimientos paso a paso para cada escenario</li>
+            <li>Plan de comunicacion interna y externa</li>
+            <li>Estrategia de recuperacion de datos (RTO y RPO)</li>
+            <li>Cronograma de pruebas y simulacros</li>
+            <li>Historial de actualizaciones del documento</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- Bloque adicional sobre RTO y RPO -->
+      <div class="concept-row">
+        <!-- Fila de dos conceptos técnicos importantes en la planificación de contingencia -->
+
+        <div class="concept-card">
+          <!-- Tarjeta para el concepto RTO -->
+          <h3 class="concept-title">RTO</h3>
+          <p class="concept-full">Recovery Time Objective</p>
+          <!-- Nombre completo del concepto en inglés -->
+          <p>
+            Es el tiempo máximo aceptable que un sistema puede estar fuera de servicio 
+            después de una falla. Definir el RTO permite priorizar los recursos durante 
+            una crisis y establece expectativas claras para la organización.
+          </p>
+        </div>
+
+        <div class="concept-card">
+          <!-- Tarjeta para el concepto RPO -->
+          <h3 class="concept-title">RPO</h3>
+          <p class="concept-full">Recovery Point Objective</p>
+          <p>
+            Es la cantidad máxima de datos que la organización está dispuesta a perder 
+            en caso de falla. Determina con qué frecuencia deben realizarse los respaldos 
+            y qué tan reciente debe ser la última copia de seguridad disponible.
+          </p>
+        </div>
+
+      </div>
+      <!-- Fin de conceptos RTO y RPO -->
+
+    </div>
+
+  </section>
+  <!-- Fin de la sección de planes -->
+
+
+  <!-- ============================================================
+       SECCIÓN: NORMAS ISO
+       Presenta las principales normas ISO aplicables al
+       mantenimiento y aseguramiento de sistemas informáticos.
+  ============================================================ -->
+  <section id="normas-iso" class="section-block alt-bg">
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Estandares internacionales</span>
+        <h2>Normas ISO aplicadas a sistemas informaticos</h2>
+        <p class="section-intro">
+          Las normas ISO son estándares reconocidos a nivel mundial que establecen criterios 
+          mínimos de calidad, seguridad y eficiencia para distintos procesos organizacionales. 
+          En el ámbito de los sistemas informáticos, varias de estas normas son especialmente 
+          relevantes para garantizar una operación confiable.
+        </p>
+      </div>
+
+      <div class="iso-grid">
+        <!-- Contenedor de tarjetas para cada norma ISO -->
+
+        <!-- Norma ISO 9001 -->
+        <div class="iso-card">
+          <!-- Cada iso-card presenta una norma con su código, nombre y descripción -->
+          <div class="iso-code">ISO 9001</div>
+          <!-- Código oficial de la norma -->
+          <h3>Sistemas de Gestion de Calidad</h3>
+          <p>
+            Establece los requisitos para implementar un sistema de gestión de calidad dentro 
+            de una organización. Aplicada a TI, asegura que los procesos de soporte, 
+            mantenimiento y entrega de servicios tecnológicos se realicen de forma consistente 
+            y orientada a la mejora continua.
+          </p>
+        </div>
+
+        <!-- Norma ISO 27001 -->
+        <div class="iso-card">
+          <div class="iso-code">ISO 27001</div>
+          <h3>Seguridad de la Informacion</h3>
+          <p>
+            Define los requisitos para establecer, implementar y mantener un Sistema de 
+            Gestión de Seguridad de la Información (SGSI). Cubre la protección de datos 
+            frente a accesos no autorizados, pérdidas, alteraciones y cualquier amenaza 
+            que comprometa la confidencialidad del sistema.
+          </p>
+        </div>
+
+        <!-- Norma ISO 20000 -->
+        <div class="iso-card">
+          <div class="iso-code">ISO 20000</div>
+          <h3>Gestion de Servicios de TI</h3>
+          <p>
+            Es el estándar internacional específico para la gestión de servicios de tecnología 
+            de información. Define buenas prácticas para la planificación, entrega, control 
+            y mejora de los servicios de TI, y está directamente alineado con los principios 
+            de ITIL.
+          </p>
+        </div>
+
+        <!-- Norma ISO 22301 -->
+        <div class="iso-card">
+          <div class="iso-code">ISO 22301</div>
+          <h3>Continuidad del Negocio</h3>
+          <p>
+            Se centra en los planes de continuidad de negocio. Establece cómo las 
+            organizaciones deben prepararse para hacer frente a interrupciones graves 
+            en sus operaciones, incluyendo fallos tecnológicos mayores, desastres naturales 
+            o incidentes de seguridad críticos.
+          </p>
+        </div>
+
+      </div>
+      <!-- Fin de la grilla de normas ISO -->
+
+    </div>
+
+  </section>
+  <!-- Fin de la sección ISO -->
+
+
+  <!-- ============================================================
+       SECCIÓN: ITIL v3
+       Explica las buenas prácticas de ITIL versión 3 y su
+       aplicación en la gestión de servicios de TI.
+  ============================================================ -->
+  <section id="itil" class="section-block">
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Buenas practicas</span>
+        <h2>ITIL v3: Gestion de servicios de TI</h2>
+      </div>
+
+      <div class="content-grid two-col">
+
+        <div class="text-block">
+
+          <p>
+            ITIL (Information Technology Infrastructure Library) es un conjunto de buenas 
+            prácticas para la gestión de servicios de tecnología de información. Su versión 3, 
+            publicada en 2007 y actualizada en 2011, organiza la gestión de TI en torno a 
+            un ciclo de vida del servicio compuesto por cinco fases claramente definidas.
+          </p>
+
+          <p>
+            A diferencia de una norma obligatoria, ITIL es un marco de referencia: las 
+            organizaciones lo adoptan de forma voluntaria y lo adaptan a su contexto particular. 
+            Su valor radica en que no fue diseñado en un laboratorio académico, sino que 
+            surge de la experiencia acumulada de miles de organizaciones en todo el mundo.
+          </p>
+
+          <p>
+            Aplicar ITIL implica definir procesos claros para la gestión de incidentes, 
+            problemas, cambios, niveles de servicio y capacidad. Cada proceso tiene roles 
+            definidos, entradas, salidas y métricas de desempeño que permiten evaluar si 
+            el servicio se está entregando correctamente.
+          </p>
+
+        </div>
+
+        <div class="highlight-box">
+          <h3>Las 5 fases del ciclo de vida ITIL v3</h3>
+
+          <ol class="numbered-list">
+            <!-- Lista ordenada para los 5 pasos del ciclo de vida de ITIL -->
+            <li>
+              <strong>Estrategia del Servicio:</strong> Define qué servicios ofrecer, a quién y con qué modelo de negocio.
+            </li>
+            <li>
+              <strong>Diseño del Servicio:</strong> Establece cómo se diseñan los servicios, incluyendo seguridad, disponibilidad y capacidad.
+            </li>
+            <li>
+              <strong>Transicion del Servicio:</strong> Gestiona el paso de un servicio del desarrollo a produccion, incluyendo la gestion de cambios.
+            </li>
+            <li>
+              <strong>Operacion del Servicio:</strong> Administra los servicios en funcionamiento: incidentes, problemas, accesos y eventos.
+            </li>
+            <li>
+              <strong>Mejora Continua del Servicio:</strong> Evalua el desempeno y aplica mejoras basadas en metricas reales.
+            </li>
+          </ol>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Fin de la sección ITIL -->
+
+
+  <!-- ============================================================
+       SECCIÓN: ASEGURAMIENTO DE LA CALIDAD
+       Aborda cómo garantizar la calidad y sostenibilidad del
+       sistema a lo largo del tiempo.
+  ============================================================ -->
+  <section id="calidad" class="section-block alt-bg">
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Calidad y sostenibilidad</span>
+        <h2>Aseguramiento de la calidad del sistema</h2>
+        <p class="section-intro">
+          El aseguramiento de la calidad en sistemas informáticos no es solo ejecutar pruebas 
+          antes de lanzar una aplicación. Es un proceso continuo que abarca todo el ciclo de 
+          vida del sistema: desde su diseño hasta su retiro, pasando por cada actualización, 
+          cambio de configuración y mejora que se realice durante su operación.
+        </p>
+      </div>
+
+      <div class="cards-row">
+
+        <!-- Tarjeta: Monitoreo -->
+        <div class="info-card">
+          <div class="card-label">Practica 01</div>
+          <h3>Monitoreo continuo</h3>
+          <p>
+            Implementar herramientas de monitoreo en tiempo real permite detectar anomalías 
+            antes de que se conviertan en fallos. Se monitorea el uso de CPU, memoria, 
+            red, almacenamiento y los tiempos de respuesta de los servicios críticos.
+          </p>
+        </div>
+
+        <!-- Tarjeta: Gestión de cambios -->
+        <div class="info-card">
+          <div class="card-label">Practica 02</div>
+          <h3>Gestion de cambios</h3>
+          <p>
+            Todo cambio en el sistema debe evaluarse, aprobarse y documentarse antes de 
+            aplicarse. Un cambio no controlado puede introducir nuevos fallos. La gestión 
+            de cambios reduce ese riesgo sin frenar la evolución del sistema.
+          </p>
+        </div>
+
+        <!-- Tarjeta: Métricas -->
+        <div class="info-card">
+          <div class="card-label">Practica 03</div>
+          <h3>Metricas y KPIs</h3>
+          <p>
+            Medir es la base de la mejora. Indicadores como la disponibilidad del sistema 
+            (uptime), el tiempo medio entre fallos (MTBF) y el tiempo medio de reparación 
+            (MTTR) permiten evaluar objetivamente el desempeño del servicio.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Tabla de métricas clave -->
+      <div class="table-wrapper">
+
+        <h3>Indicadores clave de desempeno (KPIs) en sistemas informaticos</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Indicador</th>
+              <th>Sigla</th>
+              <th>Descripcion</th>
+              <th>Meta tipica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Disponibilidad del sistema</td>
+              <td>Uptime</td>
+              <td>Porcentaje del tiempo que el sistema esta operativo</td>
+              <td>99.9% o mas</td>
+            </tr>
+            <tr>
+              <td>Tiempo medio entre fallos</td>
+              <td>MTBF</td>
+              <td>Tiempo promedio que transcurre entre un fallo y el siguiente</td>
+              <td>Lo mas alto posible</td>
+            </tr>
+            <tr>
+              <td>Tiempo medio de reparacion</td>
+              <td>MTTR</td>
+              <td>Tiempo promedio que toma restaurar el sistema tras un fallo</td>
+              <td>Lo mas bajo posible</td>
+            </tr>
+            <tr>
+              <td>Tasa de incidentes resueltos</td>
+              <td>FCR</td>
+              <td>Porcentaje de incidentes resueltos en el primer contacto</td>
+              <td>Mayor al 70%</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Fin de la sección de calidad -->
+
+
+  <!-- ============================================================
+       SECCIÓN: CONCLUSIÓN
+       Cierra la página con un resumen reflexivo del módulo.
+  ============================================================ -->
+  <section id="conclusion" class="section-block conclusion-section">
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Cierre del modulo</span>
+        <h2>Conclusion</h2>
+      </div>
+
+      <div class="conclusion-content">
+        <!-- Contenedor del texto de conclusión -->
+
+        <p>
+          El mantenimiento y aseguramiento de la operación de un sistema informático es 
+          una disciplina que exige planificación, disciplina técnica y una cultura organizacional 
+          comprometida con la calidad. No basta con tener buenos equipos o un software actualizado 
+          si no existe un proceso formal que garantice su correcta operación a lo largo del tiempo.
+        </p>
+
+        <p>
+          A lo largo de este módulo se ha visto que el mantenimiento preventivo evita problemas 
+          antes de que ocurran, el correctivo los resuelve cuando ya existen, y los planes de 
+          contingencia aseguran que la organización sepa exactamente qué hacer cuando la situación 
+          se sale del control ordinario.
+        </p>
+
+        <p>
+          Las normas ISO ofrecen un marco de referencia reconocido internacionalmente para 
+          estructurar estos procesos, mientras que ITIL v3 proporciona las buenas prácticas 
+          concretas para operarlos día a día. Juntas, estas herramientas forman una base sólida 
+          sobre la que cualquier organización puede construir una operación tecnológica confiable, 
+          eficiente y sostenible.
+        </p>
+
+        <blockquote class="final-quote">
+          <!-- Bloque de cita destacada al final de la conclusión -->
+          "Un sistema bien mantenido no es el que nunca falla, sino el que cuando falla, 
+          sabe exactamente cómo recuperarse."
+        </blockquote>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Fin de la sección conclusión -->
+
+
+  <!-- ============================================================
+       PIE DE PÁGINA (FOOTER)
+       Contiene información del autor, el módulo y el año.
+       Se muestra al final de todas las páginas del sitio.
+  ============================================================ -->
+  <footer class="site-footer">
+    <!-- <footer> es un elemento semántico de HTML5 para el pie de página -->
+
+    <div class="container">
+
+      <div class="footer-grid">
+        <!-- Grilla de tres columnas dentro del footer -->
+
+        <!-- Columna 1: Información del módulo -->
+        <div class="footer-col">
+          <h4>Modulo</h4>
+          <p>Mantenimiento y Aseguramiento de la Operacion del Sistema Informatico</p>
+        </div>
+
+        <!-- Columna 2: Contenido cubierto -->
+        <div class="footer-col">
+          <h4>Contenido cubierto</h4>
+          <ul class="footer-list">
+            <!-- Lista de temas tratados en la página, útil como resumen de contenido -->
+            <li>Mantenimiento preventivo y correctivo</li>
+            <li>Planes operativos y de contingencia</li>
+            <li>Normas ISO (9001, 27001, 20000, 22301)</li>
+            <li>Buenas practicas ITIL v3</li>
+            <li>Aseguramiento de la calidad</li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Datos del autor -->
+        <div class="footer-col">
+          <h4>Elaborado por</h4>
+          <p>Trabajo individual</p>
+          <p>Formacion tecnica en mantenimiento de sistemas</p>
+          <p class="footer-year">2025</p>
+          <!-- Año de elaboración del documento -->
+        </div>
+
+      </div>
+      <!-- Fin de la grilla del footer -->
+
+      <div class="footer-bottom">
+        <!-- Barra inferior del footer con derechos y créditos -->
+        <p>Pagina informativa elaborada con fines academicos. Todos los contenidos son de caracter educativo.</p>
+      </div>
+
+    </div>
+
+  </footer>
+  <!-- Fin del pie de página -->
+
+
+  <!-- ============================================================
+       BOTÓN "VOLVER ARRIBA"
+       Botón flotante que aparece al hacer scroll hacia abajo
+       y permite al usuario volver al inicio de la página
+       sin tener que desplazarse manualmente.
+  ============================================================ -->
+  <a href="#inicio" class="back-to-top" aria-label="Volver al inicio de la pagina">
+    <!-- href="#inicio" hace scroll de regreso al encabezado -->
+    <!-- aria-label describe el propósito del botón para lectores de pantalla -->
+    &#8679;
+    <!-- Flecha hacia arriba usando código de caracter HTML -->
+  </a>
+
+
+  <!-- ============================================================
+       SCRIPT DE NAVEGACION ACTIVA
+       Este bloque de JavaScript detecta en qué sección se
+       encuentra el usuario mientras hace scroll, y resalta
+       automáticamente el ítem correspondiente en el menú de
+       navegación, dándole la clase "active".
+  ============================================================ -->
+  <script>
+    // Selecciona todos los enlaces del menú de navegación principal
+    const navLinks = document.querySelectorAll('.main-nav a');
+
+    // Selecciona todas las secciones que tienen un id definido
+    const sections = document.querySelectorAll('section[id], header[id]');
+
+    // Función que se ejecuta cada vez que el usuario hace scroll
+    window.addEventListener('scroll', () => {
+      
+      // Variable que guardará el id de la sección actualmente visible
+      let current = '';
+
+      // Recorre cada sección y verifica si su posición está dentro del viewport
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        // offsetTop es la distancia de la sección desde el tope del documento
+        // Se resta 100px para que el cambio ocurra un poco antes de llegar a la sección
+
+        if (window.scrollY >= sectionTop) {
+          // Si el scroll actual supera el tope de esta sección, se considera la sección activa
+          current = section.getAttribute('id');
+        }
+      });
+
+      // Actualiza las clases en los enlaces del menú
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        // Primero quita la clase 'active' de todos los enlaces
+
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+          // Solo le agrega 'active' al enlace que corresponde a la sección actual
+        }
+      });
+
+    });
+    // Fin del evento scroll
+
+    // Muestra u oculta el botón "volver arriba" según el scroll
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+        // Cuando el usuario ha bajado más de 400px, el botón aparece
+      } else {
+        backToTop.classList.remove('visible');
+        // Si vuelve arriba, el botón se oculta
+      }
+    });
+
+  </script>
+  <!-- Fin del bloque de JavaScript -->
+
+
+  <!-- ============================================================
+       SCRIPT DE BÚSQUEDA FLOTANTE
+       Crea dinámicamente el panel de búsqueda, el botón de lupa
+       y el overlay oscuro, y los inserta en el documento.
+       Luego conecta toda la lógica de apertura, cierre y filtrado.
+  ============================================================ -->
+  <script>
+    // ---- 1. CREACIÓN DE ELEMENTOS EN EL DOM ----
+
+    // Overlay oscuro detrás del panel de búsqueda
+    const overlay = document.createElement('div');
+    overlay.className = 'search-overlay';
+    // El overlay cubre toda la pantalla y se activa junto con el panel
+
+    // Panel principal de búsqueda
+    const panel = document.createElement('div');
+    panel.className = 'search-panel';
+    panel.innerHTML = `
+      <!-- Botón para cerrar el panel desde dentro -->
+      <button class="search-close" aria-label="Cerrar busqueda">&#10005;</button>
+
+      <!-- Etiqueta descriptiva del campo -->
+      <span class="search-label">Buscar en el modulo</span>
+
+      <!-- Campo de texto donde el usuario escribe su búsqueda -->
+      <input type="text" id="search-input" placeholder="Escribe un tema: ISO, ITIL, preventivo..." autocomplete="off" />
+
+      <!-- Contenedor donde se inyectarán los resultados -->
+      <div class="search-results" id="search-results"></div>
+    `;
+
+    // Botón flotante de lupa que abre el panel
+    const trigger = document.createElement('button');
+    trigger.className = 'search-trigger';
+    trigger.setAttribute('aria-label', 'Abrir busqueda');
+    trigger.innerHTML = '&#9906;'; // Carácter Unicode de lupa
+
+    // Se insertan todos los elementos al final del body
+    document.body.appendChild(overlay);
+    document.body.appendChild(panel);
+    document.body.appendChild(trigger);
+
+
+    // ---- 2. REFERENCIAS A ELEMENTOS ----
+
+    const searchInput   = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const closeBtn      = panel.querySelector('.search-close');
+
+    // Recopila todas las secciones con id para usarlas como datos de búsqueda
+    const allSections = Array.from(document.querySelectorAll('section[id]'));
+
+
+    // ---- 3. FUNCIÓN DE APERTURA ----
+    function openSearch() {
+      panel.classList.add('open');
+      overlay.classList.add('open');
+      // Espera al siguiente frame para hacer foco en el input (por la animación)
+      requestAnimationFrame(() => searchInput.focus());
+      renderResults(''); // Muestra todas las secciones al abrir
+    }
+
+
+    // ---- 4. FUNCIÓN DE CIERRE ----
+    function closeSearch() {
+      panel.classList.remove('open');
+      overlay.classList.remove('open');
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+    }
+
+
+    // ---- 5. FUNCIÓN DE FILTRADO Y RENDERIZADO DE RESULTADOS ----
+    function renderResults(query) {
+      searchResults.innerHTML = ''; // Limpia resultados previos
+
+      // Filtra las secciones cuyo título o texto contenga el término buscado
+      const filtered = allSections.filter(section => {
+        const title = section.querySelector('h2')?.textContent || '';
+        const text  = section.textContent || '';
+        return title.toLowerCase().includes(query.toLowerCase()) ||
+               text.toLowerCase().includes(query.toLowerCase());
+      });
+
+      if (filtered.length === 0) {
+        // Mensaje si no hay coincidencias
+        searchResults.innerHTML = '<p style="color:var(--grey-400);font-size:0.85rem;padding:0.5rem 0;">Sin resultados para esa busqueda.</p>';
+        return;
+      }
+
+      // Crea un ítem de resultado por cada sección encontrada
+      filtered.forEach(section => {
+        const title = section.querySelector('h2')?.textContent || section.id;
+        const item  = document.createElement('div');
+        item.className = 'search-result-item';
+        item.textContent = title;
+
+        // Al hacer clic en un resultado, se cierra el panel y se hace scroll a la sección
+        item.addEventListener('click', () => {
+          closeSearch();
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        searchResults.appendChild(item);
+      });
+    }
+
+
+    // ---- 6. CONEXIÓN DE EVENTOS ----
+
+    // Abre el panel al hacer clic en el botón de lupa
+    trigger.addEventListener('click', openSearch);
+
+    // Cierra el panel al hacer clic en el botón X
+    closeBtn.addEventListener('click', closeSearch);
+
+    // Cierra el panel al hacer clic en el overlay
+    overlay.addEventListener('click', closeSearch);
+
+    // Filtra en tiempo real mientras el usuario escribe
+    searchInput.addEventListener('input', () => {
+      renderResults(searchInput.value);
+    });
+
+    // Cierra el panel al presionar la tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSearch();
+    });
+
+  </script>
+  <!-- Fin del script de búsqueda flotante -->
+
+  <!-- Vincula el archivo script.js externo con todos los efectos visuales -->
+  <script src="script.js" defer></script>
+  <!-- "defer" hace que el script cargue sin bloquear el HTML y se ejecute al final -->
+
 </body>
+<!-- Fin del cuerpo de la página -->
+
 </html>
+<!-- Fin del documento HTML -->
